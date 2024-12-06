@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/headerStyles.css">
+    <link rel="stylesheet" href="/css/menu_box.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Ticketly - Conseguí tus entradas</title>
+</head>
+<body>
+<header class="mainHeader">
+    <div class="nav-content">
+        <div class="logo">
+            <img src="../multimedia/logo.jpeg" alt="Logo Ticketly">
+            <p>TICKETLY</p>
+        </div>
+        <nav class="navbar">
+            <ul class="navbar-links">
+                <li><a href="/pages/menu_usuario.html">Inicio</a></li>
+                <li><a href="/pages/nosotros.html">Nosotros</a></li>
+                <ll><a href="/pages/contacto.html">Contactate</a></ll>
+                <ll><a href="/pages/myTickets.html">Mis Tickets</a></ll>
+            </ul>
+        </nav>
+        <div class="nav-buttons">
+            <button class="btn-secondary">Bienvenido Admin</button>
+            <button class="btn-primary" id="logoutBtn">Cerrar Sesión</button>
+            <button class="cart-btn" onclick="showCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </div>
+
+    <button id="toggleMenu" class="menu-btn">☰</button>
+
+    <div class="menu-box" id="menubox">
+        <ul class="menu-links">
+            <li><a href="/pages/index.html">Inicio</a></li>
+            <li><a href="/pages/nosotros.html">Nosotros</a></li>
+            <li><a href="/pages/contacto.html">Contactate</a></li>
+            <button class="btn-primary" id="logoutBtn1">Cerrar Sesión</button>
+            <button class="cart-btn" onclick="showCart()"></button>
+            <button class="cart-btn" onclick="showCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Encontrá tu recital perfecto en Ticketly</h1>
+            <p>Descubrí una amplia selección de eventos musicales cerca tuyo</p>
+
+            <div class="search-container glass-effect">
+                <div class="search-grid">
+                    <div class="search-item">
+                        <label><i class="fas fa-map-marker-alt"></i> Ubicación</label>
+                        <input type="text" id="locationFilter" placeholder="¿Dónde es el evento?" class="search-input">
+                    </div>
+                    <div class="search-item">
+                        <label><i class="fas fa-music"></i> Evento</label>
+                        <input type="text" id="eventFilter" placeholder="Ej: Rock, Pop, Jazz" class="search-input">
+                    </div>
+                    <div class="search-item">
+                        <label><i class="fas fa-calendar"></i> Fecha</label>
+                        <input type="date" id="dateFilter" class="search-input">
+                    </div>
+                    <button class="search-button">
+                        Buscar <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="featured-events">
+        <h2 class="section-title">Eventos Destacados</h2>
+        <div class="featured-grid">
+            <div class="container">
+                <div class="shows-carousel">
+                    <button class="carousel-btn prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="show-card">
+                                <img src="../multimedia/events/oasis.png" alt="OASIS">
+                                <div class="show-info">
+                                    <h3>OASIS</h3>
+                                    <p>River Plate Stadium</p>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="show-card">
+                                <img src="../multimedia/events/airbag.png" alt="AIRBAG">
+                                <div class="show-info">
+                                    <h3>AIRBAG</h3>
+                                    <p>Vélez Sarsfield</p>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="show-card">
+                                <img src="../multimedia/events/taylor.png" alt="TAYLOR">
+                                <div class="show-info">
+                                    <h3>TAYLOR SWIFT</h3>
+                                    <p>Estadio River Plate</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="show-card">
+                                <img src="../multimedia/events/21pilots.png" alt="21">
+                                <div class="show-info">
+                                    <h3>TWEENTY ONE PILOTS</h3>
+                                    <p>Movistar Arena</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="show-card">
+                                <img src="../multimedia/events/maria.png" alt="maria">
+                                <div class="show-info">
+                                    <h3>MARÍA BECERRA</h3>
+                                    <p>Estadio River Plate</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="show-card">
+                                <img src="../multimedia/events/natypeluso.png" alt="maria">
+                                <div class="show-info">
+                                    <h3>NATY PELUSO</h3>
+                                    <p>MOVISTAR ARENA</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="show-card">
+                                <img src="../multimedia/events/duki.png" alt="duki">
+                                <div class="show-info">
+                                    <h3>DUKI</h3>
+                                    <p>VELEZ SARFIELD</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-events">
+        <h2 class="section-title">Todos los Eventos</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="rock">Rock</button>
+            <button class="filter-btn" data-filter="pop">Pop</button>
+            <button class="filter-btn" data-filter="trap">Reggaeton</button>
+        </div>
+
+        <div class="events-grid">
+            <div class="event-card glass-effect" data-category="rock" data-event-id="1" data-price="15000">
+                <div class="event-content">
+                    <img src="../multimedia/events/gnr.png" alt="Guns N' Roses" class="event-image">
+                    <div class="event-info">
+                        <h3>Guns N' Roses</h3>
+                        <div class="event-details">
+                            <div class="venue">📍 Vélez Sarsfield</div>
+                            <div class="meta-info">
+                                <span class="date">📅 15 Dic 2024</span>
+                                <span class="price" data-price="202000">💲 202.000</span>
+                                <button class="ticket-btn">🎫 Comprar Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card glass-effect" data-category="pop">
+                <div class="event-content">
+                    <img src="../multimedia/events/taylor.png" alt="Taylor Swift" class="event-image">
+                    <div class="event-info">
+                        <h3>Taylor Swift</h3>
+                        <div class="event-details">
+                            <div class="venue">📍 Estadio River Plate</div>
+                            <div class="meta-info">
+                                <span class="date">📅 6 de Septimebre</span>
+                                <span class="price" data-price="150000">💲 150.000</span>
+                                <button class="ticket-btn">🎫 Comprar Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card glass-effect" data-category="pop">
+                <div class="event-content">
+                    <img src="../multimedia/events/21pilots.png" alt="21 Pilots" class="event-image">
+                    <div class="event-info">
+                        <h3>Tweenty One Pilots</h3>
+                        <div class="event-details">
+                            <div class="venue">📍 Movistar Arena</div>
+                            <div class="meta-info">
+                                <span class="date">📅 8 de Septimebre</span>
+                                <span class="price" data-price="170000">💲 170.000</span>
+                                <button class="ticket-btn">🎫 Comprar Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card glass-effect" data-category="rock">
+                <div class="event-content">
+                    <img src="../multimedia/events/airbag.png" alt="Airbag" class="event-image">
+                    <div class="event-info">
+                        <h3>Airbag</h3>
+                        <div class="event-details">
+                            <div class="venue">📍 Vélez Sarsfield</div>
+                            <div class="meta-info">
+                                <span class="date">📅 Diciembre</span>
+                                <span class="price" data-price="35000">💲 35.000</span>
+                                <button class="ticket-btn">🎫 Comprar Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card glass-effect" data-category="trap">
+                <div class="event-content">
+                    <img src="../multimedia/events/duki.png" alt="Duki" class="event-image">
+                    <div class="event-info">
+                        <h3>Duki</h3>
+                        <div class="event-details">
+                            <div class="venue">📍Velez Sarfield</div>
+                            <div class="meta-info">
+                                <span class="date">📅 6 de Octubre</span>
+                                <span class="price" data-price="55000">💲 55.000</span>
+                                <button class="ticket-btn">🎫 Comprar Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card glass-effect" data-category="trap">
+                <div class="event-content">
+                    <img src="../multimedia/events/maria.png" alt="María Becerra" class="event-image">
+                    <div class="event-info">
+                        <h3>María Becerra</h3>
+                        <div class="event-details">
+                            <div class="venue">📍 Estadio River Plate</div>
+                            <div class="meta-info">
+                                <span class="date">📅 3 de Marzo</span>
+                                <span class="price" data-price="120000">💲 120.000</span>
+                                <button class="ticket-btn">🎫 Comprar Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card glass-effect" data-category="trap">
+                <div class="event-content">
+                    <img src="../multimedia/events/natypeluso.png" alt="natypeluso" class="event-image">
+                    <div class="event-info">
+                        <h3>Naty Peluso</h3>
+                        <div class="event-details">
+                            <div class="venue">📍 Movistar Arena</div>
+                            <div class="meta-info">
+                                <span class="date">📅 4 de Junio</span>
+                                <span class="price" data-price=20000">💲 20.000</span>
+                                <button class="ticket-btn">🎫 Comprar Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card glass-effect" data-category="rock">
+                <div class="event-content">
+                    <img src="../multimedia/events/oasis.png" alt="oasis" class="event-image">
+                    <div class="event-info">
+                        <h3>Oasis</h3>
+                        <div class="event-details">
+                            <div class="venue">📍 Estadio River Plate</div>
+                            <div class="meta-info">
+                                <span class="date">📅 15 de Noviembre</span>
+                                <span class="price" data-price="190000">💲 190.000</span>
+                                <button class="ticket-btn">🎫 Comprar Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card glass-effect" data-category="rock">
+                <div class="event-content">
+                    <img src="../multimedia/events/tb.png" alt="tanbionica" class="event-image">
+                    <div class="event-info">
+                        <h3>Tan Biónica</h3>
+                        <div class="event-details">
+                            <div class="venue">📍 Estadio Único de la Plata</div>
+                            <div class="meta-info">
+                                <span class="date">📅 4 de Noviembre</span>
+                                <span class="price" data-price="25000">💲 25.000</span>
+                                <button class="ticket-btn">🎫 Comprar Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-club">
+        <div class="club-content">
+            <h2>¡Shh!</h2>
+            <p>¿Querés acceso exclusivo a preventas y paquetes VIP? ¡Unite a nuestro Club ahora!</p>
+            <button class="club-btn">Unirse al Club</button>
+        </div>
+    </section>
+</main>
+
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/menu_usuario.js"></script>
+    <script src="/js/club_vip.js"></script>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Ticketly</h3>
+                <p>Tu destino para los mejores eventos musicales</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <a href="/pages/contacto.html">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ticketly. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

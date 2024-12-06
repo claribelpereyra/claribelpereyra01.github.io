@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/headerStyles.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/menu_box.css">
+    <title>Ticketly - Contactate</title>
+</head>
+
+<body>
+    <main>
+        <header class="mainHeader">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="../multimedia/logo.jpeg" alt="Logo Ticketly">
+                    <p>TICKETLY</p>
+                </div>
+                <nav class="navbar">
+                    <ul class="navbar-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <ll><a href="contacto.html">Contactate</a></ll>
+                    </ul>
+                </nav>
+                <div class="nav-buttons">
+                    <button class="btn-secondary" onclick="window.location.href='login.html'">Iniciar sesión</button>
+                    <button class="btn-primary" onclick="window.location.href='register.html'">Regístrate</button>
+                </div>
+            </div>
+
+        <button id="toggleMenu" class="menu-btn">☰</button>
+
+        <div class="menu-box" id="menubox">
+            <ul class="menu-links">
+                <li><a href="/pages/index.html">Inicio</a></li>
+                <li><a href="/pages/nosotros.html">Nosotros</a></li>
+                <li><a href="/pages/contacto.html">Contactate</a></li>
+                <li><a href="/pages/login.html">Iniciar sesión</a></li>
+                <li><a href="/pages/register.html">Regístrarse</a></li>
+            </ul>
+        </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>CENTRO DE AYUDA</h1>
+                <p>¿Tenés alguna duda? ¡Queremos ayudarte!</p>
+        
+        </section>
+
+        <div id="contactoSection2" class="container my-5">
+            
+            <section class="contact-info text-center my-5">
+                <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> ticketly@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> <strong>Telefono:</strong> 11-6747-2996</p>
+                <a href="https://wa.me/1167472996" target="_blank" class="btn btn-success">
+                    <i class="fa-brands fa-whatsapp"></i> Chatea con nosotros en WhatsApp
+                </a>
+            </section>
+
+            <section class="contact-form my-5">
+                <h2 class="text-center" style="margin-bottom: 40px;">Envíanos un mensaje</h2>
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                        <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
+                    </div>
+                    <div class="col-12">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                        <div class="invalid-feedback">Por favor ingresa tu mensaje.</div>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button class="btn btn-primary" type="submit">Enviar Mensaje</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        
+        <script>
+            (() => {
+                'use strict'
+                const forms = document.querySelectorAll('.needs-validation')
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        } else {
+                            const nombre = document.getElementById('nombre').value;
+                            const email = document.getElementById('email').value;
+                            const mensaje = document.getElementById('mensaje').value;
+        
+                            const mensajeWhatsApp = `*Nombre:* ${nombre}%0A*Email:* ${email}%0A*Mensaje:* ${mensaje}`;
+                            
+                            const urlWhatsApp = `https://wa.me/1167472996?text=${mensajeWhatsApp}`;
+        
+                            window.open(urlWhatsApp, '_blank');
+                            event.preventDefault();
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+            })()
+        </script>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script>
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+
+
+</body>
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h3>Ticketly</h3>
+            <p>Tu destino para los mejores eventos musicales</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-section">
+                <h4>Soporte</h4>
+                <a href="/pages/contacto.html">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ticketly. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+</html>

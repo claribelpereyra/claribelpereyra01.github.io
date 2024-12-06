@@ -1,0 +1,182 @@
+body {
+    color: #e9e9e5; 
+    background-color: #191c18;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    color: #e9e9e5; /* Color del texto de los enlaces */
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(42, 45, 41, 0.8)
+    ),
+    url('../multimedia/image.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #e9e9e5;
+    padding-top: 80px;
+}
+
+a:hover {
+    color: #e44d5a; /* Color al pasar el mouse sobre el enlace */
+}
+
+/* Botón de WhatsApp */
+.btn-success {
+    background-color: #e44d5a; /* Fondo del botón */
+    border-color: #e44d5a; /* Borde del botón */
+}
+
+.btn-success:hover {
+    background-color: #c7404d; /* Fondo del botón al pasar el mouse */
+    border-color: #c7404d; /* Borde del botón al pasar el mouse */
+}
+
+/* Estilo de los botones en el formulario */
+.btn-primary {
+    background-color: #e44d5a; /* Fondo de los botones */
+    border-color: #e44d5a; /* Borde de los botones */
+}
+
+.btn-primary:hover {
+    background-color: #c7404d; /* Fondo del botón al pasar el mouse */
+    border-color: #c7404d; /* Borde del botón al pasar el mouse */
+}
+
+/* Iconos */
+i {
+    color: #ffffff; /* Color de los iconos */
+}
+
+i:hover {
+    color: #c7404d; /* Color de los iconos al pasar el mouse */
+}
+
+/* Estilos generales */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Estilo para el título principal */
+.contact-title {
+    color: #e9e9e5;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Estilo del formulario */
+.contact-form {
+    background: rgba(25, 28, 35, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    color: #e9e9e5;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(78, 84, 107, 0.3);
+    border: 1px solid rgba(228, 77, 90, 0.3);
+    border-radius: 8px;
+    color: #e9e9e5;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #e44d5a;
+    background: rgba(78, 84, 107, 0.4);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Botón del formulario */
+.submit-btn {
+    background: #e44d5a;
+    color: #e9e9e5;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    width: fit-content;
+}
+
+.submit-btn:hover {
+    background: #ca3f4a;
+}
+
+/* Información de contacto */
+.contact-info {
+    background: rgba(25, 28, 35, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info h3 {
+    color: #e9e9e5;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: #e9e9e5;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Logo */
+.logo-pequeño {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 1rem;
+    }
+    
+    .contact-title {
+        font-size: 2rem;
+    }
+}
